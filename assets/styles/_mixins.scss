@@ -1,0 +1,50 @@
+@use 'var' as *;
+
+@mixin font(
+  $size) {
+  font-size: 16px;
+  font-family: 'TBC';
+  line-height: 1.7;
+  color: $black;
+}
+
+@mixin dropdown_menu{
+  .dropbtn {
+    color: $black;
+    font-size: 16px;
+    border: none;
+    transition: 0.2s all ease-in-out;
+    padding: 8px 10px;
+    border-radius: 10%;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    margin: 2px 0;
+    display: none;
+    position: absolute;
+    padding: 12px 16px;
+    background-color: white;
+    transition: 0.2s all ease-in-out;
+    border-radius: 10%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  .dropdown-content a:hover {background-color: darken(#fff, 10%);;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: darken(#fff, 10%);}
+}

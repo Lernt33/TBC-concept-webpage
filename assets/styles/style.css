@@ -1,0 +1,97 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.blue-hover {
+  color: #182CC0;
+  transition: 0.4s all;
+  font-weight: 700;
+}
+.blue-hover:hover {
+  color: #3295CE;
+}
+
+main {
+  margin-top: 80px;
+}
+
+header {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #eef1f1;
+}
+header img {
+  transform: translate(0, 20%);
+}
+header a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "TBC";
+  line-height: 1.7;
+  color: #141719;
+}
+header .desktop-nav {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+header .desktop-nav .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+header .desktop-nav .nav-left .nav-contents {
+  display: flex;
+  gap: 16px;
+}
+header .desktop-nav .nav-right {
+  margin-left: auto;
+  display: flex;
+  gap: 16px;
+}
+header .desktop-nav .nav-right .dropbtn {
+  color: #141719;
+  font-size: 16px;
+  border: none;
+  transition: 0.2s all ease-in-out;
+  padding: 8px 10px;
+  border-radius: 10%;
+}
+header .desktop-nav .nav-right .dropdown {
+  position: relative;
+  display: inline-block;
+}
+header .desktop-nav .nav-right .dropdown-content {
+  margin: 2px 0;
+  display: none;
+  position: absolute;
+  padding: 12px 16px;
+  background-color: white;
+  transition: 0.2s all ease-in-out;
+  border-radius: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+header .desktop-nav .nav-right .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+header .desktop-nav .nav-right .dropdown-content a:hover {
+  background-color: #e6e6e6;
+}
+header .desktop-nav .nav-right .dropdown:hover .dropdown-content {
+  display: block;
+}
+header .desktop-nav .nav-right .dropdown:hover .dropbtn {
+  background-color: #e6e6e6;
+}
+
+/*# sourceMappingURL=style.css.map */

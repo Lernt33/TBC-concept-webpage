@@ -1,0 +1,68 @@
+@use 'var' as *;
+@use 'mixins' as *;
+
+// common things
+body {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.blue-hover {
+  color: $not-active-blue;
+  transition: 0.4s all;
+  font-weight: 700;
+
+  &:hover {
+    color: $active;
+  }
+}
+
+main{
+  margin-top: 80px;
+}
+
+
+// header
+header {
+  position: fixed;
+  img {
+    transform: translate(0, 20%);
+  }
+
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #eef1f1;
+
+  a {
+    text-decoration: none;
+    @include font(16px);
+  }
+
+  .desktop-nav {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+
+      .nav-contents {
+        display: flex;
+        gap: 16px;
+      }
+    }
+
+    .nav-right {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+      @include dropdown_menu;
+    }
+  }
+}
+// main
