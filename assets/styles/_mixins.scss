@@ -1,16 +1,48 @@
 @use 'var' as *;
 
+@mixin Init{
+  body {
+    margin: 0 0;
+    padding: 0 0;
+  }
+  @font-face {
+    font-family: 'TBC';
+    src: url('../fonts/TBCXRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TBC';
+    src: url('../fonts/TBCXMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+
+  }
+  @font-face {
+    font-family: 'TBC';
+    src: url('../fonts/TBCXBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+
+  }
+}
+
+
 @mixin font(
   $size) {
-  font-size: 16px;
+  font-size: $size;
   font-family: 'TBC';
   line-height: 1.7;
   color: $black;
 }
-
+//
+//
+// START OF DROPDOEN
 @mixin dropdown_menu{
   .dropbtn {
-    color: $black;
+    font-weight: bold;
+    cursor:pointer;
+    color: $gray;
     font-size: 16px;
     border: none;
     transition: 0.2s all ease-in-out;
@@ -24,27 +56,28 @@
   }
 
   .dropdown-content {
-    margin: 2px 0;
+    padding-top: 8px;
     display: none;
     position: absolute;
-    padding: 12px 16px;
-    background-color: white;
-    transition: 0.2s all ease-in-out;
-    border-radius: 10%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: transparent;
   }
 
   .dropdown-content a {
-    color: black;
+    padding: 12px 22px;
+    background-color: #fff;
     text-decoration: none;
     display: block;
-    width: 100%;
-    font-family: sans-serif;
-    font-size: 16px;
+    transition: 0.4s all ease-in-out;
+    border-radius: 10%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    @include font(16px);
   }
   .dropdown-content a:hover {background-color: darken(#fff, 10%);;}
 
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content, {display: block;}
 
   .dropdown:hover .dropbtn {background-color: darken(#fff, 10%);}
 }
+// EMD OF DROPDOWN
+//
+//
