@@ -1,15 +1,16 @@
 @use 'var' as *;
 @use 'mixins' as *;
 
+.hidden-element {
+  visibility: hidden;
+  pointer-events: none;
+}
 
 @mixin nav {
-  header {
-    position: sticky;
-    height: 80px;
-    width: 100%;
-    border-bottom: 1px solid #eef1f1;
+  .full-nav-desktop {
+    position: relative;
 
-    img {
+    svg {
       transform: translate(0, 15%) !important;
     }
 
@@ -19,44 +20,118 @@
       @include font(16px);
     }
 
-    .desktop-nav {
-      margin: 0 auto;
-      max-width: 1100px;
+    header {
+      position: sticky;
+      height: 80px;
       width: 100%;
-      display: flex;
-      height: 100%;
-      align-items: center;
+      border-bottom: 1px solid #eef1f1;
 
-      .nav-left {
+
+      .desktop-nav {
+        margin: 0 auto;
+        max-width: 1100px;
+        width: 100%;
         display: flex;
+        height: 100%;
         align-items: center;
-        gap: 72px;
 
-        .tbc-main-logo {
-          fill: $not-active-blue;
+        .nav-left {
+          display: flex;
+          align-items: center;
+          gap: 72px;
+
+          .tbc-main-logo {
+            fill: $gray;
+          }
+
+          .nav-contents {
+            display: flex;
+            gap: 32px;
+          }
         }
 
-        .nav-contents {
+        .nav-right {
+          margin-left: auto;
           display: flex;
-          gap: 32px;
+          align-items: center;
+          gap: 16px;
+
+          .nav-search {
+            transform: translate(0, 0) !important;
+            margin: 0;
+            padding: 8px;
+            cursor: pointer;
+            fill: $gray;
+
+            &:hover {
+              fill: $active;
+            }
+          }
+
+          @include dropdown_menu;
+
+          a {
+            @include font(14px);
+          }
         }
       }
+    }
 
-      .nav-right {
-        margin-left: auto;
+    .nav-rest {
+      display: block;
+      border: 1px solid black;
+      height: 242px;
+      width: 100%;
+      position: absolute;
+      z-index: 10000;
+
+      .main-content {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        min-height: 191px;
+        height: 100%;
         display: flex;
-        align-items: center;
-        gap: 16px;
-        .nav-search{
-          transform: translate(0, 0) !important;
-          margin: 0;
-          padding: 8px;
-          cursor: pointer;
-        }
-        @include dropdown_menu;
+        padding: 32px;
+        //align-items: center;
+        gap: 47px;
 
-        a {
-          @include font(14px);
+        .add-image {
+          display: flex;
+          flex-direction: column;
+          gap: 13px;
+
+          a {
+            @include font(14px);
+          }
+
+        }
+
+        .add-contents {
+          display: flex;
+          gap: 20px;
+          min-width: 450px;
+          width: 100%;
+
+          ul {
+            width: 120px;
+            margin: 0;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            li {
+              a {
+                @include font(14px);
+                font-weight: 500;
+              }
+            }
+
+            &:last-child {
+              margin-left: 14px;
+            }
+          }
         }
       }
     }

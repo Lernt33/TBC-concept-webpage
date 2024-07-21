@@ -1,3 +1,8 @@
+.hidden-element {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 body {
   margin: 0 0;
   padding: 0 0;
@@ -30,16 +35,13 @@ body {
   color: #3295CE !important;
 }
 
-header {
-  position: sticky;
-  height: 80px;
-  width: 100%;
-  border-bottom: 1px solid #eef1f1;
+.full-nav-desktop {
+  position: relative;
 }
-header img {
+.full-nav-desktop svg {
   transform: translate(0, 15%) !important;
 }
-header a {
+.full-nav-desktop a {
   font-family: "TBC", sans-serif;
   text-decoration: none;
   font-size: 16px;
@@ -47,7 +49,13 @@ header a {
   line-height: 1.7;
   color: #141719;
 }
-header .desktop-nav {
+.full-nav-desktop header {
+  position: sticky;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #eef1f1;
+}
+.full-nav-desktop header .desktop-nav {
   margin: 0 auto;
   max-width: 1100px;
   width: 100%;
@@ -55,31 +63,35 @@ header .desktop-nav {
   height: 100%;
   align-items: center;
 }
-header .desktop-nav .nav-left {
+.full-nav-desktop header .desktop-nav .nav-left {
   display: flex;
   align-items: center;
   gap: 72px;
 }
-header .desktop-nav .nav-left .tbc-main-logo {
-  fill: #182CC0;
+.full-nav-desktop header .desktop-nav .nav-left .tbc-main-logo {
+  fill: #555F62;
 }
-header .desktop-nav .nav-left .nav-contents {
+.full-nav-desktop header .desktop-nav .nav-left .nav-contents {
   display: flex;
   gap: 32px;
 }
-header .desktop-nav .nav-right {
+.full-nav-desktop header .desktop-nav .nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 16px;
 }
-header .desktop-nav .nav-right .nav-search {
+.full-nav-desktop header .desktop-nav .nav-right .nav-search {
   transform: translate(0, 0) !important;
   margin: 0;
   padding: 8px;
   cursor: pointer;
+  fill: #555F62;
 }
-header .desktop-nav .nav-right .dropbtn {
+.full-nav-desktop header .desktop-nav .nav-right .nav-search:hover {
+  fill: #3295CE;
+}
+.full-nav-desktop header .desktop-nav .nav-right .dropbtn {
   font-weight: bold;
   cursor: pointer;
   color: #555F62;
@@ -89,17 +101,17 @@ header .desktop-nav .nav-right .dropbtn {
   padding: 8px 10px;
   border-radius: 10%;
 }
-header .desktop-nav .nav-right .dropdown {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown {
   position: relative;
   display: inline-block;
 }
-header .desktop-nav .nav-right .dropdown-content {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown-content {
   padding-top: 8px;
   display: none;
   position: absolute;
   background-color: transparent;
 }
-header .desktop-nav .nav-right .dropdown-content a {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown-content a {
   padding: 12px 22px;
   background-color: #fff;
   text-decoration: none;
@@ -112,20 +124,74 @@ header .desktop-nav .nav-right .dropdown-content a {
   line-height: 1.7;
   color: #141719;
 }
-header .desktop-nav .nav-right .dropdown-content a:hover {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown-content a:hover {
   background-color: #e6e6e6;
 }
-header .desktop-nav .nav-right .dropdown:hover .dropdown-content {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown:hover .dropdown-content {
   display: block;
 }
-header .desktop-nav .nav-right .dropdown:hover .dropbtn {
+.full-nav-desktop header .desktop-nav .nav-right .dropdown:hover .dropbtn {
   background-color: #e6e6e6;
 }
-header .desktop-nav .nav-right a {
+.full-nav-desktop header .desktop-nav .nav-right a {
   font-size: 14px;
   font-family: "TBC";
   line-height: 1.7;
   color: #141719;
+}
+.full-nav-desktop .nav-rest {
+  display: block;
+  border: 1px solid black;
+  height: 242px;
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+}
+.full-nav-desktop .nav-rest .main-content {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 191px;
+  height: 100%;
+  display: flex;
+  padding: 32px;
+  gap: 47px;
+}
+.full-nav-desktop .nav-rest .main-content .add-image {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.full-nav-desktop .nav-rest .main-content .add-image a {
+  font-size: 14px;
+  font-family: "TBC";
+  line-height: 1.7;
+  color: #141719;
+}
+.full-nav-desktop .nav-rest .main-content .add-contents {
+  display: flex;
+  gap: 20px;
+  min-width: 450px;
+  width: 100%;
+}
+.full-nav-desktop .nav-rest .main-content .add-contents ul {
+  width: 120px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.full-nav-desktop .nav-rest .main-content .add-contents ul li a {
+  font-size: 14px;
+  font-family: "TBC";
+  line-height: 1.7;
+  color: #141719;
+  font-weight: 500;
+}
+.full-nav-desktop .nav-rest .main-content .add-contents ul:last-child {
+  margin-left: 14px;
 }
 
 main {
