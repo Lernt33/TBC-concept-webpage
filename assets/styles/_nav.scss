@@ -1,6 +1,7 @@
 @use 'var' as *;
 @use 'mixins' as *;
 
+
 .hidden-element {
   visibility: hidden;
   pointer-events: none;
@@ -9,6 +10,7 @@
 @mixin nav {
   .full-nav-desktop {
     position: relative;
+    z-index: 1;
 
     svg {
       transform: translate(0, 15%) !important;
@@ -25,7 +27,7 @@
       height: 80px;
       width: 100%;
       border-bottom: 1px solid #eef1f1;
-
+      z-index: 10;
 
       .desktop-nav {
         margin: 0 auto;
@@ -34,6 +36,7 @@
         display: flex;
         height: 100%;
         align-items: center;
+        z-index: 10;
 
         .nav-left {
           display: flex;
@@ -47,6 +50,56 @@
           .nav-contents {
             display: flex;
             gap: 32px;
+            position: relative;
+            z-index: 20;
+            div {
+              position: relative;
+              z-index: 20;
+              display: flex;
+              flex-direction: column;
+              .nav-drop-element {
+                &::after{
+                  content: '';
+                  display: block;
+                  width: 0;
+                  height: 1px;
+                  margin:auto;
+                  transform: translate(0,27px);
+                  background: $not-active-blue;
+                  transition: width 0.6s;
+                  animation-iteration-count: 1;
+                }
+                &:focus::after{
+                  width: 100%;
+                }
+              }
+              ul {
+                //display: flex;
+                display: none;
+                width: 100%;
+                min-width: 166px;
+                padding: 0;
+                margin: 0;
+                top: 84px;
+                z-index: 1000;
+                position: absolute;
+                list-style: none;
+                flex-direction: column;
+                gap: 16px;
+                align-content: start;
+                li {
+                  a {
+                    @include font(14px);
+                    font-weight: 500;
+                    transition: all 0.5s;
+                    &:hover{
+                      color: $not-active-blue;
+                    }
+                  }
+                }
+
+              }
+            }
           }
         }
 
@@ -78,13 +131,13 @@
     }
 
     .nav-rest {
-      display: block;
-      border: 1px solid black;
+      display: none;
+      //display: block;
       height: 242px;
       width: 100%;
       position: absolute;
-      z-index: 10000;
-
+      z-index: 5;
+      transition: opacity 0.1s;
       .main-content {
         max-width: 1100px;
         width: 100%;
@@ -93,7 +146,6 @@
         height: 100%;
         display: flex;
         padding: 32px;
-        //align-items: center;
         gap: 47px;
 
         .add-image {
@@ -104,37 +156,37 @@
           a {
             @include font(14px);
           }
-
-        }
-
-        .add-contents {
-          display: flex;
-          gap: 20px;
-          min-width: 450px;
-          width: 100%;
-
-          ul {
-            width: 120px;
-            margin: 0;
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            li {
-              a {
-                @include font(14px);
-                font-weight: 500;
-              }
-            }
-
-            &:last-child {
-              margin-left: 14px;
-            }
-          }
         }
       }
     }
   }
+}
 
+
+.animation04s{
+  animation-name: opacity;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+}
+.opacity-0{
+  opacity: 0;
+}
+.animation1s{
+  animation-name: opacity;
+  animation-duration: 1.2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes opacity {
+  0%   {opacity: 0;}
+  25%  {opacity: 0;}
+  50%  {opacity: 0.5;}
+  //75%  {opacity: 0.75;}
+  100% {opacity: 1;}
+}
+@keyframes opacityout {
+  0%   {opacity: 1;}
+  25%  {opacity: 0.75;}
+  50%  {opacity: 0.5;}
+  100% {opacity: 0;}
 }
