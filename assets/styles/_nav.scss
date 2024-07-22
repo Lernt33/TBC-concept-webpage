@@ -2,15 +2,12 @@
 @use 'mixins' as *;
 
 
-.hidden-element {
-  visibility: hidden;
-  pointer-events: none;
-}
-
 @mixin nav {
   .full-nav-desktop {
-    position: relative;
-    z-index: 1;
+    background-color: white;
+    top: 0;
+    position: sticky;
+    z-index: 10000;
 
     svg {
       transform: translate(0, 15%) !important;
@@ -23,11 +20,13 @@
     }
 
     header {
-      position: sticky;
+      top: 0;
+      right: 0;
       height: 80px;
       width: 100%;
       border-bottom: 1px solid #eef1f1;
-      z-index: 10;
+      background-color: $gray3;
+      z-index: 1000;
 
       .desktop-nav {
         margin: 0 auto;
@@ -37,14 +36,37 @@
         height: 100%;
         align-items: center;
         z-index: 10;
+        @media screen and (max-width: 1099px) {
+          margin: 0 auto;
+          justify-content: space-between;
+
+          max-width: 85vw;
+        }
 
         .nav-left {
           display: flex;
           align-items: center;
           gap: 72px;
+          justify-content: space-between;
+          width: 100%;
 
-          .tbc-main-logo {
-            fill: $gray;
+          a {
+            .tbc-main-logo {
+              fill: $gray;
+            }
+
+            .second-logo {
+              display: none;
+            }
+
+            @media screen and (max-width: 700px) {
+              .tbc-main-logo {
+                display: none;
+              }
+              .second-logo {
+                display: block;
+              }
+            }
           }
 
           .nav-contents {
@@ -52,27 +74,34 @@
             gap: 32px;
             position: relative;
             z-index: 20;
+            @media screen and (max-width: 1099px) {
+              display: none;
+            }
+
             div {
               position: relative;
               z-index: 20;
               display: flex;
               flex-direction: column;
+
               .nav-drop-element {
-                &::after{
+                &::after {
                   content: '';
                   display: block;
                   width: 0;
                   height: 1px;
-                  margin:auto;
-                  transform: translate(0,27px);
+                  margin: auto;
+                  transform: translate(0, 27px);
                   background: $not-active-blue;
                   transition: width 0.6s;
                   animation-iteration-count: 1;
                 }
-                &:focus::after{
+
+                &:focus::after {
                   width: 100%;
                 }
               }
+
               ul {
                 //display: flex;
                 display: none;
@@ -87,12 +116,14 @@
                 flex-direction: column;
                 gap: 16px;
                 align-content: start;
+
                 li {
                   a {
                     @include font(14px);
                     font-weight: 500;
                     transition: all 0.5s;
-                    &:hover{
+
+                    &:hover {
                       color: $not-active-blue;
                     }
                   }
@@ -122,7 +153,14 @@
           }
 
           @include dropdown_menu;
-
+          @media screen and (max-width: 1099px) {
+            .dropdown {
+              display: none;
+            }
+          }
+          // burgerich
+          @include burger;
+          //
           a {
             @include font(14px);
           }
@@ -131,13 +169,16 @@
     }
 
     .nav-rest {
-      display: none;
       //display: block;
+      background-color: white;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01);
+      display: none;
       height: 242px;
       width: 100%;
       position: absolute;
       z-index: 5;
-      transition: opacity 0.1s;
+      transition: all 0.4s;
+
       .main-content {
         max-width: 1100px;
         width: 100%;
@@ -162,31 +203,110 @@
   }
 }
 
+.nav-rest-mobile {
 
-.animation04s{
+  display: none;
+  @media screen and (max-width: 1099px) {
+    display: block;
+    height: fit-content;
+    width: 100%;
+    .dropdown-box-wrap{
+      border-bottom: $gray2 solid 1px;
+      padding: 32px 0;
+    }
+    .dropdown-box,.contact {
+      position: relative;
+      width: 85vw;
+      margin: 0 auto;
+      .dropdown-title {
+        @include font(18px);
+        font-weight: bold;
+      }
+      img{
+        position: absolute;
+        right: 0;
+        transform: translate(0,100%);
+        bottom: 50%;
+        cursor: pointer;
+      }
+    }
+    .contact{
+      padding: 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .contact-title{
+        margin: 0 0 16px;
+        @include font(14px);
+        font-weight: bold;
+        @media screen and (max-width: 700px) {
+          @include font(24px);
+        }
+      }
+
+      a{
+        @include font(14px);
+        font-weight: 500;
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.animation04s {
   animation-name: opacity;
   animation-duration: 0.8s;
   animation-iteration-count: 1;
 }
-.opacity-0{
+
+.opacity-0 {
   opacity: 0;
 }
-.animation1s{
+
+.animation1s {
   animation-name: opacity;
   animation-duration: 1.2s;
   animation-iteration-count: 1;
 }
 
-@keyframes opacity {
-  0%   {opacity: 0;}
-  25%  {opacity: 0;}
-  50%  {opacity: 0.5;}
-  //75%  {opacity: 0.75;}
-  100% {opacity: 1;}
+.hidden-element {
+  animation-name: opacityout;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
+
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  //75%  {opacity: 0.75;}
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes opacityout {
-  0%   {opacity: 1;}
-  25%  {opacity: 0.75;}
-  50%  {opacity: 0.5;}
-  100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none !important;
+  }
 }
