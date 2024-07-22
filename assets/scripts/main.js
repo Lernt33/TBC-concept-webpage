@@ -15,3 +15,15 @@ nav_elements.forEach(el => {
     })
 
 })
+
+document.querySelector('.burger').addEventListener('click', function () {
+    this.classList.toggle('active');
+    const navRestMobile = document.querySelector('.nav-rest-mobile');
+    if (navRestMobile.style.display === 'none') {
+        navRestMobile.style.display =  'block' ;
+    }
+    console.log('click')
+    navRestMobile.classList.toggle('hidden-element')
+    ;
+
+})

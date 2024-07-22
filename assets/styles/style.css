@@ -1,4 +1,6 @@
 .nav-rest-mobile {
+  position: absolute;
+  background-color: white;
   display: none;
 }
 @media screen and (max-width: 1099px) {
@@ -11,19 +13,19 @@
     border-bottom: #d1d5d6 solid 1px;
     padding: 32px 0;
   }
-  .nav-rest-mobile .dropdown-box, .nav-rest-mobile .contact {
+  .nav-rest-mobile .dropdown-box-wrap .dropdown-box, .nav-rest-mobile .dropdown-box-wrap .contact {
     position: relative;
     width: 85vw;
     margin: 0 auto;
   }
-  .nav-rest-mobile .dropdown-box .dropdown-title, .nav-rest-mobile .contact .dropdown-title {
+  .nav-rest-mobile .dropdown-box-wrap .dropdown-box .dropdown-title, .nav-rest-mobile .dropdown-box-wrap .contact .dropdown-title {
     font-size: 18px;
     font-family: "TBC";
     line-height: 1.7;
     color: #141719;
     font-weight: bold;
   }
-  .nav-rest-mobile .dropdown-box img, .nav-rest-mobile .contact img {
+  .nav-rest-mobile .dropdown-box-wrap .dropdown-box img, .nav-rest-mobile .dropdown-box-wrap .contact img {
     position: absolute;
     right: 0;
     transform: translate(0, 100%);
@@ -31,10 +33,9 @@
     cursor: pointer;
   }
   .nav-rest-mobile .contact {
-    padding: 32px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    width: 85vw;
+    padding: 32px 0 0;
+    margin: 0 auto;
   }
   .nav-rest-mobile .contact .contact-title {
     margin: 0 0 16px;
@@ -45,7 +46,7 @@
     font-weight: bold;
   }
 }
-@media screen and (max-width: 1099px) and (max-width: 700px) {
+@media screen and (max-width: 1099px) and (max-width: 900px) {
   .nav-rest-mobile .contact .contact-title {
     font-size: 24px;
     font-family: "TBC";
@@ -54,15 +55,143 @@
   }
 }
 @media screen and (max-width: 1099px) {
-  .nav-rest-mobile .contact a {
+  .nav-rest-mobile .contact .contact-list {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1099px) and (max-width: 900px) {
+  .nav-rest-mobile .contact .contact-list {
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .nav-rest-mobile .contact .contact-list a {
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-rest-mobile .contact .contact-list a img {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+  }
+  .nav-rest-mobile .contact .contact-list a p {
     font-size: 14px;
     font-family: "TBC";
     line-height: 1.7;
     color: #141719;
     font-weight: 500;
-  }
-  .nav-rest-mobile .contact a p {
+    color: #555F62;
     margin: 0;
+  }
+  .nav-rest-mobile .contact .contact-list a p:hover {
+    text-decoration: underline #555F62;
+  }
+  .nav-rest-mobile .social-media {
+    width: 85vw;
+    margin: 0 auto 24px;
+  }
+  .nav-rest-mobile .social-media .social-title {
+    font-size: 14px;
+    font-family: "TBC";
+    line-height: 1.7;
+    color: #141719;
+    font-weight: bold;
+  }
+}
+@media screen and (max-width: 1099px) and (max-width: 900px) {
+  .nav-rest-mobile .social-media .social-title {
+    font-size: 24px;
+    font-family: "TBC";
+    line-height: 1.7;
+    color: #141719;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .nav-rest-mobile .social-media .social-media-list {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .nav-rest-mobile .social-media .social-media-list svg {
+    width: 16px;
+    height: 16px;
+    padding: 18px;
+    background-color: #f9fafa;
+    fill: #555F62;
+    transition: 0.4s;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .nav-rest-mobile .social-media .social-media-list svg:hover {
+    fill: #182CC0;
+    background-color: #ebeeee;
+  }
+  .nav-rest-mobile .nav-footer-mobile {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #eef1f1;
+    width: 100%;
+    height: 88.8px;
+  }
+}
+@media screen and (max-width: 1099px) and (max-width: 900px) {
+  .nav-rest-mobile .nav-footer-mobile {
+    background-color: #f9fafa;
+    height: 151px;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents {
+    display: flex;
+    width: 85vw;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1099px) and (max-width: 900px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents {
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents p {
+    font-size: 12px;
+    font-family: "TBC";
+    line-height: 1.7;
+    color: #141719;
+    color: #555F62;
+  }
+}
+@media screen and (max-width: 1099px) and (max-width: 900px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents .nav-footer-left {
+    display: flex;
+    align-items: center;
+  }
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents .nav-footer-left svg {
+    fill: #555F62;
+    height: 21px;
+    width: 21px;
+    margin-right: 8px;
+    transform: translate(0, 25%);
+  }
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents .nav-footer-right {
+    display: flex;
+    gap: 36px;
   }
 }
 
@@ -156,6 +285,11 @@ body {
   position: sticky;
   z-index: 10000;
 }
+@media screen and (max-width: 1099px) {
+  .full-nav-desktop {
+    position: static;
+  }
+}
 .full-nav-desktop svg {
   transform: translate(0, 15%) !important;
 }
@@ -175,6 +309,11 @@ body {
   border-bottom: 1px solid #eef1f1;
   background-color: #f9fafa;
   z-index: 1000;
+}
+@media screen and (max-width: 1099px) {
+  .full-nav-desktop header {
+    position: sticky;
+  }
 }
 .full-nav-desktop header .desktop-nav {
   margin: 0 auto;
@@ -205,7 +344,7 @@ body {
 .full-nav-desktop header .desktop-nav .nav-left a .second-logo {
   display: none;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .full-nav-desktop header .desktop-nav .nav-left a .tbc-main-logo {
     display: none;
   }
@@ -425,7 +564,7 @@ body {
   min-height: 191px;
   height: 100%;
   display: flex;
-  padding: 32px;
+  padding: 32px 0;
   gap: 47px;
 }
 .full-nav-desktop .nav-rest .main-content .add-image {
