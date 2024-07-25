@@ -1,9 +1,10 @@
 @use 'var' as *;
 
 @mixin Init {
-  body {
+  * {
     margin: 0 0;
     padding: 0 0;
+    font-family: 'TBC';
   }
   @font-face {
     font-family: 'TBC';
