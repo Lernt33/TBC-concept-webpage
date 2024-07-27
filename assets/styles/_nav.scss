@@ -6,14 +6,8 @@
   .full-nav-desktop {
     background-color: white;
     top: 0;
-    position: sticky;
+    //position: sticky;
     z-index: 10000;
-    //@media screen and (max-width: 1099px) {
-    //  position: fixed;
-    //  top: 0;
-    //  left: 0;
-    //  right: 0;
-    //}
     svg {
       transform: translate(0, 15%) !important;
     }
@@ -49,7 +43,7 @@
           margin: 0 auto;
           justify-content: space-between;
 
-          max-width: 85vw;
+          max-width: 85%;
         }
 
         .nav-left {

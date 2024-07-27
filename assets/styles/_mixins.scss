@@ -5,6 +5,21 @@
     margin: 0 0;
     padding: 0 0;
     font-family: 'TBC';
+
+    body {
+      overflow: hidden;
+      //@media screen and (min-width: 1100px) {
+      //  overflow: visible;
+      //}
+    }
+
+    img {
+      -webkit-user-drag: none;
+    }
+
+    a {
+      -webkit-user-drag: none;
+    }
   }
   @font-face {
     font-family: 'TBC';
@@ -175,6 +190,177 @@
     }
   }
 }
-@mixin footer{
+
+@mixin footer {
+  footer {
+    height: max-content;
+
+    .page-size {
+      width: $page-size;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .footer-top {
+        padding: 45px 0 50px;
+
+        svg {
+          transform: translate(0, 15%) !important;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        @include dropdown_menu
+      }
+
+      .lists {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 45px;
+
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          .list-header {
+            a {
+              font-weight: bold;
+              text-decoration: none;
+              @include font(16px)
+            }
+          }
+
+          li:not(.list-header) {
+            a {
+              text-decoration: none;
+              color: $gray;
+              transition: 0.9s;
+
+              &:hover {
+                color: $not-active-blue;
+              }
+            }
+
+            .contact-list {
+              margin: 16px 0;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+
+              a {
+                display: flex;
+
+                img {
+                  margin-right: 8px;
+                  width: 16px;
+                  height: 16px;
+                  transform: translate(0, 25%) !important;
+                }
+
+                p {
+                  @include font(16px);
+                  font-weight: 500;
+                  color: $gray;
+                  margin: 0;
+
+                  &:hover {
+                    text-decoration: underline $gray;
+                  }
+                }
+              }
+            }
+
+            .social-media {
+              .social-title {
+                @include font(16px);
+                font-weight: bold;
+                margin-top: 8px;
+              }
+
+              .social-media-list {
+                display: flex;
+                gap: 16px;
+                margin-top: 16px;
+
+                svg {
+                  width: 18px;
+                  height: 18px;
+                  padding: 11px;
+                  background-color: $gray3;
+                  fill: $gray;
+                  transition: 0.4s;
+                  border-radius: 6px;
+                  cursor: pointer;
+
+                  &:hover {
+                    fill: $not-active-blue;
+                    background-color: darken($gray3, 5%);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .footer_bottom {
+        padding: 28px 0;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          display: flex;
+          gap: 24px;
+
+          svg {
+            fill: $gray;
+            width: 21px;
+            height: 21px;
+          }
+
+          p {
+            @include font(12px);
+          }
+        }
+
+        .rights-protected {
+          gap: 0;
+        }
+      }
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #eef1f1;
+    }
+
+  }
+}
+
+@mixin scroll {
+  .scroll-content {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    box-sizing: border-box
+  }
+
+  .scroll-content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .scroll-content::-webkit-scrollbar-track {
+    background-color: rgba(222, 222, 222, .75);
+    border-radius: 4px;
+  }
+
+  .scroll-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+  }
 
 }

@@ -1,16 +1,19 @@
-const initSlider = () => {
-    const imageList = document.querySelector(".slider-wrapper .image-list");
-    const slideButtons = document.querySelectorAll(".slide-button");
-    const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+function initSlider(slider){
+    const imageList = slider.querySelector(".slider-wrapper .image-list");
+    const slideButtons = slider.querySelectorAll(".slide-button");
+    const sliderScrollbar = slider.querySelector(".container .slider-scrollbar");
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
     const imageItems = imageList.querySelectorAll(".image-item");
-    const imageItemWidth = imageItems[0].clientWidth + 18; // 18 - это gap между элементами
+    const imageItemWidth = imageItems[0].clientWidth + 18; // 18 - gap between elements
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
     if (imageItems.length <= 3) {
         sliderScrollbar.style.display = "none";
+        sliderScrollbar.parentElement.style.justifyContent= "end"
+
     } else {
         sliderScrollbar.style.display = "flex";
+        sliderScrollbar.parentElement.style.justifyContent= "space-between"
     }
 
     scrollbarThumb.addEventListener("mousedown", (e) => {
@@ -94,15 +97,15 @@ const initSlider = () => {
         const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
         if (scrollLeft > 0) {
-            document.getElementById("prev-slide").style.fill = "#182CC0";
+            slider.querySelector("#prev-slide").style.fill = "#182CC0";
         } else {
-            document.getElementById("prev-slide").style.fill = "#555F62";
+            slider.querySelector("#prev-slide").style.fill = "#555F62";
         }
 
         if (scrollLeft < maxScrollLeft) {
-            document.getElementById("next-slide").style.fill = "#182CC0";
+            slider.querySelector("#next-slide").style.fill = "#182CC0";
         } else {
-            document.getElementById("next-slide").style.fill = "#555F62";
+            slider.querySelector("#next-slide").style.fill = "#555F62";
         }
     }
 
@@ -120,5 +123,12 @@ const initSlider = () => {
     handleSlideButtons();
 }
 
-window.addEventListener("resize", initSlider);
-window.addEventListener("load", initSlider);
+const initAllSliders = () => {
+    const sliders = document.querySelectorAll(".container");
+    sliders.forEach(slider => {
+        initSlider(slider);
+    });
+}
+
+window.addEventListener("resize", initAllSliders);
+window.addEventListener("load", initAllSliders);
