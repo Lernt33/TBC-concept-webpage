@@ -31,12 +31,13 @@ document.querySelector('.burger').addEventListener('click', function () {
 document.querySelectorAll('.dropdown-arroy-image').forEach(el => {
     el.parentElement.addEventListener('click', () => {
         // turnign off all dropdowns
-        console.log(el)
         document.querySelectorAll('.dropdown-box').forEach(el2 => {
             if (el2.querySelector('.reversed') && el.parentElement !== el2) {
                 el2.querySelector('.reversed').classList.remove('reversed')
                 el2.querySelector('.dropdown-active').classList.add('dropdown-hidden')
                 el2.querySelector('.dropdown-active').classList.remove('dropdown-active')
+                el2.classList.remove('increased-height')
+                el2.parentElement.style.backgroundColor = 'white'
             }
         })
         el.classList.toggle('reversed');
@@ -46,5 +47,13 @@ document.querySelectorAll('.dropdown-arroy-image').forEach(el => {
         }
         content.classList.toggle('dropdown-active')
         content.classList.toggle('dropdown-hidden')
+        const contentFather = el.parentElement
+        contentFather.classList.toggle('increased-height')
+        // if (contentFather.parentElement.style.backgroundColor === 'white' || !contentFather.parentElement.style.backgroundColor) {
+        //     contentFather.parentElement.style.background = 'linear-gradient(to top, white 32px, transparent 32px 100%), linear-gradient(to bottom, white 32px, transparent 32px 100%)'
+        // }
+        // else{
+        //     contentFather.parentElement.style.backgroundColor = 'white'
+        // }
     })
 })
