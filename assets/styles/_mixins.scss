@@ -65,6 +65,9 @@
     transition: 0.2s all ease-in-out;
     padding: 8px 10px;
     border-radius: 10%;
+    @media screen and (max-width: 1120px) {
+      background-color: $gray3;
+    }
   }
 
   .dropdown {
@@ -197,6 +200,10 @@
 
     .page-size {
       width: $page-size;
+      @media screen and (max-width: 1120px) {
+        width: 100%;
+        align-items: center;
+      }
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -204,7 +211,10 @@
 
       .footer-top {
         padding: 45px 0 50px;
-
+        width: 100%;
+        @media screen and (max-width: 1120px){
+          width: 85%;
+        }
         svg {
           transform: translate(0, 15%) !important;
         }
@@ -213,12 +223,20 @@
         justify-content: space-between;
         align-content: center;
         @include dropdown_menu
+
       }
 
       .lists {
         display: flex;
         justify-content: space-between;
         padding-bottom: 45px;
+        width: 100%;
+        @media screen and (max-width: 1120px){
+          width: 85%;
+        }
+        @media screen and (max-width: 770px) {
+          display: none;
+        }
 
         ul {
           list-style: none;
@@ -308,9 +326,18 @@
       }
 
       .footer_bottom {
+        @media screen and (max-width: 1120px){
+          width: 85%;
+        }
         padding: 28px 0;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 770px) {
+          align-content: space-between;
+          width: 85%;
+          flex-direction: column-reverse;
+          gap: 32px;
+        }
 
         div {
           display: flex;
@@ -324,6 +351,9 @@
 
           p {
             @include font(12px);
+            @media screen and (max-width: 770px) {
+              font-size: 14px;
+            }
           }
         }
 
@@ -363,7 +393,7 @@
     background-color: rgba(0, 0, 0, .5);
     border-radius: 4px;
   }
-  @media screen  and (max-width: (1120px)){
+  @media screen and (max-width: (1120px)) {
     .scroll-content::-webkit-scrollbar {
       width: 0;
     }

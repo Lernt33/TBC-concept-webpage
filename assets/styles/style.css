@@ -556,6 +556,11 @@ p {
   padding: 8px 10px;
   border-radius: 10%;
 }
+@media screen and (max-width: 1120px) {
+  .full-nav-desktop header .nav-right .dropbtn {
+    background-color: #f9fafa;
+  }
+}
 .full-nav-desktop header .nav-right .dropdown {
   position: relative;
   display: inline-block;
@@ -1410,11 +1415,23 @@ footer .page-size {
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: 1120px) {
+  footer .page-size {
+    width: 100%;
+    align-items: center;
+  }
+}
 footer .page-size .footer-top {
   padding: 45px 0 50px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-content: center;
+}
+@media screen and (max-width: 1120px) {
+  footer .page-size .footer-top {
+    width: 85%;
+  }
 }
 footer .page-size .footer-top svg {
   transform: translate(0, 15%) !important;
@@ -1428,6 +1445,11 @@ footer .page-size .footer-top .dropbtn {
   transition: 0.2s all ease-in-out;
   padding: 8px 10px;
   border-radius: 10%;
+}
+@media screen and (max-width: 1120px) {
+  footer .page-size .footer-top .dropbtn {
+    background-color: #f9fafa;
+  }
 }
 footer .page-size .footer-top .dropdown {
   position: relative;
@@ -1465,6 +1487,17 @@ footer .page-size .lists {
   display: flex;
   justify-content: space-between;
   padding-bottom: 45px;
+  width: 100%;
+}
+@media screen and (max-width: 1120px) {
+  footer .page-size .lists {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 770px) {
+  footer .page-size .lists {
+    display: none;
+  }
 }
 footer .page-size .lists ul {
   list-style: none;
@@ -1547,6 +1580,19 @@ footer .page-size .footer_bottom {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 1120px) {
+  footer .page-size .footer_bottom {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 770px) {
+  footer .page-size .footer_bottom {
+    align-content: space-between;
+    width: 85%;
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+}
 footer .page-size .footer_bottom div {
   display: flex;
   gap: 24px;
@@ -1561,6 +1607,11 @@ footer .page-size .footer_bottom div p {
   font-family: "TBC";
   line-height: 1.7;
   color: #141719;
+}
+@media screen and (max-width: 770px) {
+  footer .page-size .footer_bottom div p {
+    font-size: 14px;
+  }
 }
 footer .page-size .footer_bottom .rights-protected {
   gap: 0;
