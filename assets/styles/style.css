@@ -21,7 +21,6 @@
     transition: 1s all;
   }
   .nav-rest-mobile .dropdown-box-wrap .dropdown-box .dropdown-content {
-    z-index: 10;
     background-color: white;
     padding-top: 16px;
     flex-direction: column;
@@ -61,6 +60,7 @@
     transform: rotate(180deg);
   }
   .nav-rest-mobile .contact {
+    position: relative;
     width: 85vw;
     padding: 32px 0 0;
     margin: 0 auto;
@@ -552,58 +552,6 @@ p {
 .full-nav-desktop header .nav-right .nav-search:hover {
   fill: #3295CE;
 }
-.full-nav-desktop header .nav-right .dropbtn {
-  font-weight: bold;
-  cursor: pointer;
-  color: #555F62;
-  font-size: 16px;
-  border: none;
-  transition: 0.2s all ease-in-out;
-  padding: 8px 10px;
-  border-radius: 10%;
-}
-@media screen and (max-width: 1120px) {
-  .full-nav-desktop header .nav-right .dropbtn {
-    background-color: #f9fafa;
-  }
-}
-.full-nav-desktop header .nav-right .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.full-nav-desktop header .nav-right .dropdown-content {
-  padding-top: 8px;
-  display: none;
-  position: absolute;
-  background-color: transparent;
-}
-.full-nav-desktop header .nav-right .dropdown-content a {
-  padding: 12px 22px;
-  background-color: #fff;
-  text-decoration: none;
-  display: block;
-  transition: 0.4s all ease-in-out;
-  border-radius: 10%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-  font-family: "TBC";
-  line-height: 1.7;
-  color: #141719;
-}
-.full-nav-desktop header .nav-right .dropdown-content a:hover {
-  background-color: #e6e6e6;
-}
-.full-nav-desktop header .nav-right .dropdown:hover .dropdown-content {
-  display: block;
-}
-.full-nav-desktop header .nav-right .dropdown:hover .dropbtn {
-  background-color: #e6e6e6;
-}
-@media screen and (max-width: 1120px) {
-  .full-nav-desktop header .nav-right .dropdown {
-    display: none;
-  }
-}
 .full-nav-desktop header .nav-right .burger {
   display: none;
   position: relative;
@@ -680,6 +628,64 @@ p {
   line-height: 1.7;
   color: #141719;
   min-width: 156px;
+}
+.full-nav-desktop header .nav-right .dropbtn {
+  font-weight: bold;
+  cursor: pointer;
+  color: #555F62;
+  font-size: 16px;
+  border: none;
+  transition: 0.2s all ease-in-out;
+  padding: 8px 10px;
+  border-radius: 10%;
+}
+@media screen and (max-width: 1120px) {
+  .full-nav-desktop header .nav-right .dropbtn {
+    background-color: #f9fafa;
+  }
+}
+.full-nav-desktop header .nav-right .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.full-nav-desktop header .nav-right .dropdown-content {
+  min-width: 100%;
+  width: 100%;
+  z-index: 10;
+  padding-top: 8px;
+  display: none;
+  position: absolute;
+  background-color: transparent;
+}
+.full-nav-desktop header .nav-right .dropdown-content a {
+  text-align: center;
+  min-width: 100%;
+  width: 100%;
+  padding: 12px 0px;
+  background-color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: 0.4s all ease-in-out;
+  border-radius: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-family: "TBC";
+  line-height: 1.7;
+  color: #141719;
+}
+.full-nav-desktop header .nav-right .dropdown-content a:hover {
+  background-color: #e6e6e6;
+}
+.full-nav-desktop header .nav-right .dropdown:hover .dropdown-content {
+  display: block;
+}
+.full-nav-desktop header .nav-right .dropdown:hover .dropbtn {
+  background-color: #e6e6e6;
+}
+@media screen and (max-width: 1120px) {
+  .full-nav-desktop header .nav-right .dropdown {
+    display: none;
+  }
 }
 
 .nav-rest {
@@ -1178,6 +1184,7 @@ p {
   flex-direction: column-reverse !important;
 }
 .scroll-content main article .container .slider-wrapper .image-list .image-item .image-info {
+  user-select: none;
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -1462,13 +1469,19 @@ footer .page-size .footer-top .dropdown {
   display: inline-block;
 }
 footer .page-size .footer-top .dropdown-content {
+  min-width: 100%;
+  width: 100%;
+  z-index: 10;
   padding-top: 8px;
   display: none;
   position: absolute;
   background-color: transparent;
 }
 footer .page-size .footer-top .dropdown-content a {
-  padding: 12px 22px;
+  text-align: center;
+  min-width: 100%;
+  width: 100%;
+  padding: 12px 0px;
   background-color: #fff;
   text-decoration: none;
   display: block;

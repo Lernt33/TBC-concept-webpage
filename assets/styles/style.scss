@@ -499,6 +499,7 @@ p {
                 }
 
                 .image-info {
+                  user-select: none;
                   padding: 28px;
                   display: flex;
                   flex-direction: column;

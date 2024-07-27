@@ -76,6 +76,9 @@
   }
 
   .dropdown-content {
+    min-width: 100%;
+    width: 100%;
+    z-index: 10;
     padding-top: 8px;
     display: none;
     position: absolute;
@@ -83,7 +86,10 @@
   }
 
   .dropdown-content a {
-    padding: 12px 22px;
+    text-align: center;
+    min-width: 100%;
+    width: 100%;
+    padding: 12px 0px;
     background-color: #fff;
     text-decoration: none;
     display: block;

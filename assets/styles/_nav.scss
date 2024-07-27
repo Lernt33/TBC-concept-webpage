@@ -171,18 +171,20 @@
           }
         }
 
-        @include dropdown_menu;
-        @media screen and (max-width: 1120px) {
-          .dropdown {
-            display: none;
-          }
-        }
+
+
         // burgerich
         @include burger;
         //
         a {
           @include font(14px);
           min-width: 156px;
+        }
+        @include dropdown_menu;
+        @media screen and (max-width: 1120px) {
+          .dropdown {
+            display: none;
+          }
         }
       }
     }
@@ -245,7 +247,6 @@
         transition: 1s all;
 
         .dropdown-content {
-          z-index: 10;
           background-color: white;
           padding-top: 16px;
           flex-direction: column;
@@ -291,6 +292,7 @@
     }
 
     .contact {
+      position: relative;
       width: 85vw;
       padding: 32px 0 0;
       margin: 0 auto;
