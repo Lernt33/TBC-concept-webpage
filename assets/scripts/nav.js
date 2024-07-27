@@ -1,20 +1,38 @@
 const nav_elements = document.querySelectorAll('.nav-drop-element');
 const nav_dropdown_background = document.querySelector('.nav-rest');
 const drop_contents = document.querySelector('.dropdown-content')
-// const
+const config = {
+    1: false,
+    2: false,
+    3: false,
+}
 nav_elements.forEach(el => {
     el.addEventListener('focus', (e) => {
         nav_dropdown_background.style.display = 'block';
         nav_dropdown_background.classList.remove('hidden-element');
         document.getElementById(`nav-dropcontent-${el.attributes[1].value}`).style.display = 'flex';
+        config[`${el.attributes[1].value}`] = true
     })
 })
 nav_elements.forEach(el => {
     el.addEventListener('focusout', (e) => {
-        nav_dropdown_background.classList.add('hidden-element');
-        document.getElementById(`nav-dropcontent-${el.attributes[1].value}`).style.display = 'none';
+        setTimeout(() => {
+            const temp = []
+            for (let [key, value] of Object.entries(config)) {
+                if (key !== el.attributes[1].value) {
+                    temp.push(value)
+                }
+            }
+            if (temp.every(el => el === false)) {
+                nav_dropdown_background.classList.add('hidden-element');
+                setTimeout(() => {
+                    nav_dropdown_background.style.display = 'none'
+                }, 600)
+            }
+            document.getElementById(`nav-dropcontent-${el.attributes[1].value}`).style.display = 'none';
+            config[`${el.attributes[1].value}`] = false
+        }, 100)
     })
-
 })
 
 document.querySelector('.burger').addEventListener('click', function () {
@@ -22,11 +40,10 @@ document.querySelector('.burger').addEventListener('click', function () {
     const navRestMobile = document.querySelector('.nav-rest-mobile');
     if (navRestMobile.style.display === 'none') {
         navRestMobile.style.display = 'block';
-    }
-    else{
-        setTimeout(()=>{
+    } else {
+        setTimeout(() => {
             navRestMobile.style.display = 'none'
-        },600)
+        }, 600)
     }
     navRestMobile.classList.toggle('hidden-element')
     ;
