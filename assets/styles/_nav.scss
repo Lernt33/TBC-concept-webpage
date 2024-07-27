@@ -8,6 +8,7 @@
     top: 0;
     //position: sticky;
     z-index: 10000;
+
     svg {
       transform: translate(0, 15%) !important;
     }
@@ -26,7 +27,7 @@
       border-bottom: 1px solid #eef1f1;
 
       z-index: 1000;
-      @media screen and (max-width: 1099px) {
+      @media screen and (max-width: 1120px) {
         background-color: $gray3;
         position: sticky;
       }
@@ -39,10 +40,9 @@
         height: 100%;
         align-items: center;
         z-index: 10;
-        @media screen and (max-width: 1099px) {
+        @media screen and (max-width: 1120px) {
           margin: 0 auto;
           justify-content: space-between;
-
           max-width: 85%;
         }
 
@@ -52,165 +52,184 @@
           gap: 72px;
           justify-content: space-between;
           width: 100%;
+          @media screen and (max-width: 500px) {
+            gap: 0;
+          }
+        }
 
-          a {
-            .tbc-main-logo {
-              fill: $gray;
-            }
-
-            .second-logo {
-              display: none;
-            }
-
-            @media screen and (max-width: 900px) {
-              .tbc-main-logo {
-                display: none;
-              }
-              .second-logo {
-                display: block;
-              }
-            }
+        a {
+          .tbc-main-logo {
+            fill: $gray;
           }
 
-          .nav-contents {
-            display: flex;
-            gap: 32px;
-            position: relative;
-            z-index: 20;
-            @media screen and (max-width: 1099px) {
+          .second-logo {
+            display: none;
+          }
+
+          @media screen and (max-width: 900px) {
+            .tbc-main-logo {
               display: none;
             }
-
-            div {
-              position: relative;
-              z-index: 20;
-              display: flex;
-              flex-direction: column;
-
-              .nav-drop-element {
-                &::after {
-                  content: '';
-                  display: block;
-                  width: 0;
-                  height: 1px;
-                  margin: auto;
-                  transform: translate(0, 27px);
-                  background: $not-active-blue;
-                  transition: width 0.6s;
-                  animation-iteration-count: 1;
-                }
-
-                &:focus::after {
-                  width: 100%;
-                }
-              }
-
-              ul {
-                //display: flex;
-                display: none;
-                width: 100%;
-                min-width: 166px;
-                padding: 0;
-                margin: 0;
-                top: 84px;
-                z-index: 1000;
-                position: absolute;
-                list-style: none;
-                flex-direction: column;
-                gap: 16px;
-                align-content: start;
-
-                li {
-                  a {
-                    @include font(14px);
-                    font-weight: 500;
-                    transition: all 0.5s;
-
-                    &:hover {
-                      color: $not-active-blue;
-                    }
-                  }
-                }
-
-              }
+            .second-logo {
+              display: block;
             }
           }
         }
 
-        .nav-right {
-          margin-left: auto;
+        .nav-contents {
           display: flex;
-          align-items: center;
-          gap: 16px;
-
-          .nav-search {
-            transform: translate(0, 0) !important;
-            margin: 0;
-            padding: 8px;
-            cursor: pointer;
-            fill: $gray;
-
-            &:hover {
-              fill: $active;
-            }
+          gap: 32px;
+          position: relative;
+          z-index: 20;
+          @media screen and (max-width: 1120px) {
+            display: none;
           }
 
-          @include dropdown_menu;
-          @media screen and (max-width: 1099px) {
-            .dropdown {
+          div {
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+
+            .nav-drop-element {
+              &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 1px;
+                margin: auto;
+                transform: translate(0, 27px);
+                background: $not-active-blue;
+                transition: width 0.6s;
+                animation-iteration-count: 1;
+              }
+
+              &:focus::after {
+                width: 100%;
+              }
+            }
+
+            ul {
+              //display: flex;
               display: none;
+              width: 100%;
+              min-width: 166px;
+              padding: 0;
+              margin: 0;
+              top: 84px;
+              z-index: 1000;
+              position: absolute;
+              list-style: none;
+              flex-direction: column;
+              gap: 16px;
+              align-content: start;
+
+              li {
+                a {
+                  @include font(14px);
+                  font-weight: 500;
+                  transition: all 0.5s;
+
+                  &:hover {
+                    color: $not-active-blue;
+                  }
+                }
+              }
+
             }
-          }
-          // burgerich
-          @include burger;
-          //
-          a {
-            @include font(14px);
           }
         }
       }
-    }
 
-    .nav-rest {
-      //display: block;
-      background-color: white;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01);
-      display: none;
-      height: 242px;
-      width: 100%;
-      position: absolute;
-      z-index: 5;
-      transition: all 0.4s;
-
-      .main-content {
-        max-width: $page-size;
-        width: 100%;
-        margin: 0 auto;
-        min-height: 191px;
-        height: 100%;
+      .nav-right {
+        margin-left: auto;
         display: flex;
-        padding: 32px 0;
-        gap: 47px;
+        align-items: center;
+        gap: 16px;
+        @media screen and (max-width: 750px) {
+          gap: 0px;
+        }
 
-        .add-image {
-          display: flex;
-          flex-direction: column;
-          gap: 13px;
-
-          a {
-            @include font(14px);
+        .blue-hover {
+          @media screen and (max-width: 500px) {
+            font-size: 12px;
           }
+        }
+
+        .nav-search {
+          transform: translate(0, 0) !important;
+          margin: 0;
+          padding: 8px;
+          cursor: pointer;
+          fill: $gray;
+          @media screen and (max-width: 500px) {
+            padding: 0px;
+          }
+
+          &:hover {
+            fill: $active;
+          }
+        }
+
+        @include dropdown_menu;
+        @media screen and (max-width: 1120px) {
+          .dropdown {
+            display: none;
+          }
+        }
+        // burgerich
+        @include burger;
+        //
+        a {
+          @include font(14px);
+          min-width: 156px;
+        }
+      }
+    }
+  }
+
+  .nav-rest {
+    //display: block;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01);
+    display: none;
+    height: 242px;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    transition: all 0.4s;
+
+    .main-content {
+      max-width: $page-size;
+      width: 100%;
+      margin: 0 auto;
+      min-height: 191px;
+      height: 100%;
+      display: flex;
+      padding: 32px 0;
+      gap: 47px;
+
+      .add-image {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        a {
+          @include font(14px);
         }
       }
     }
   }
 }
 
+
+
 .nav-rest-mobile {
+  z-index: 1;
   position: absolute;
   background-color: white;
   display: none;
-  @media screen and (max-width: 1099px) {
+  @media screen and (max-width: 1120px) {
     display: block;
     height: fit-content;
     width: 100%;

@@ -47,31 +47,50 @@ p {
         max-width: $page-size;
         width: 100%;
         margin: 0 auto;
+        @media screen and (max-width: 1120px) {
+          margin: 0 auto;
+          max-width: 85%;
+        }
+        @media screen and (max-width: 770px) {
+          max-width: 100%;;
+        }
 
         .small-title {
           @include font(12px);
           padding: 24px 0;
           margin: 0;
           font-weight: 500;
+          @media screen and (max-width: 770px) {
+            width: 85%;
+            margin: auto;
+          }
         }
 
         .picture1 {
-          background-image: url("/assets/images/ze324k50.yq4Become-2.webp");
+          background-image: url("../images/banner1.webp");
           background-size: 101%;
         }
 
         .picture2 {
-          background-image: url("/assets/images/banner2.png");
+          background-image: url("../images/banner2.png");
           background-size: 105%;
+          @media screen and (max-width: 1120px) {
+            background-size: 1400px !important;
+          }
         }
 
-        .box2 {
-          width: 130px !important;
-        }
+
 
         .concept-banner {
           margin: 32px 0 60px;
+          width: 100%;
           min-height: 376px;
+          @media screen and (max-width: 1120px) {
+            margin: 0;
+            min-height: 450px;
+            background-size: 1100px;
+            align-items: flex-end;
+          }
           height: 100%;
           background-position: center center;
           background-repeat: no-repeat;
@@ -87,11 +106,23 @@ p {
             display: flex;
             flex-direction: column;
             gap: 22px;
-            min-width: 910px;
+            max-width: 910px;
+            width: 85%;
+
             line-height: 1.5;
+            @media screen and (max-width: 1120px) {
+              padding-bottom: 24px;
+            }
+            @media screen and (max-width: 750px) {
+              font-size: 24px;
+              width: 94%;
+            }
 
             h3 {
               @include font(28px);
+              @media screen and (max-width: 1300px) {
+                font-size: 24px;
+              }
               margin: 0;
               color: white;
               padding: 0;
@@ -100,23 +131,33 @@ p {
 
             p {
               margin: 0;
-              max-width: 540px;
-              width: 100%;
+              width: 540px;
               @include font(16px);
               color: white;
+              @media screen and (max-width: 1300px) {
+                font-size: 14px;
+              }
+              @media screen and (max-width: 750px) {
+                max-width: 100%;
+                width: 100%;
+              }
             }
 
             a {
               display: flex;
               align-items: center;
               justify-content: center;
+              width: 150px;
 
               svg {
                 fill: white;
                 margin-right: 4px;
               }
 
-              width: 150px;
+
+              @media screen and (max-width: 1120px) {
+                width: 100% !important;
+              }
               height: 50px;
               background-color: $not-active-blue;
               background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.43));;
@@ -146,20 +187,33 @@ p {
           }
         }
       }
-
+      }
       article {
         max-width: $page-size;
         width: 100%;
-        margin: 120px auto 0;
-
-        h1 {
-          @include font(36px);
-          font-weight: 500;
-          line-height: 1.5;
+        margin: 0px auto 0;
+        @media screen and (max-width: 1120px) {
+          margin: 72px auto 0;
+          max-width: 85%;
+          max-width: 85%;
+          h1 {
+            @include font(36px);
+            font-weight: 500;
+            line-height: 1.5;
+            @media screen and (max-width: 1120px) {
+              font-size: 28px;
+            }
+            @media screen and (max-width: 500px) {
+              font-size: 24px;
+            }
+          }
         }
 
         h4 {
           margin: 120px 0 36px;
+          @media screen and (max-width: 1120px) {
+            margin: 100px 0 36px;
+          }
         }
 
         .container-grid {
@@ -169,6 +223,14 @@ p {
           gap: 30px;
           width: 100%;
           margin-bottom: 60px;
+          @media screen and (max-width: 770px) {
+            overflow-x: scroll !important;
+            display: flex;
+            .grid-elem {
+              width: 280px !important;
+              height: 232px !important;
+            }
+          }
 
           a {
             text-decoration: none;
@@ -262,19 +324,42 @@ p {
           }
         }
 
+        @media screen and (max-width: 770px) {
+          .container-grid {
+            display: flex;
+            flex-direction: row;
+            overflow-x: scroll;
+            gap: 6px;
+          }
+
+          .container-grid .grid-elem {
+            flex: 0 0 auto;
+            width: 280px;
+            height: 232px;
+            margin-right: 10px;
+          }
+        }
+
         .cards {
           padding: 60px 0;
           gap: 30px;
           width: 100%;
-          height: 180px;
+          height: auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          @media screen and (max-width: 1120px) {
+            flex-direction: column;
+            align-items: start;
+          }
 
           .card {
             background-color: white;
             max-width: calc((100% - 60px) / 3);
             width: 100%;
+            @media screen and (max-width: 1120px) {
+              max-width: 100%;
+            }
             height: 180px;
             display: flex;
             flex-direction: column;
@@ -298,6 +383,9 @@ p {
           align-items: center;
           margin-top: 60px;
           margin-bottom: 36px;
+          @media screen and (max-width: 1120px) {
+            margin-top: 40px;
+          }
 
           h4 {
             margin: 0;
@@ -315,7 +403,7 @@ p {
 
         .container {
           max-width: $page-size;
-          width: 110%;
+          width: 100%;
           padding-bottom: 60px;
 
           .slider-wrapper {
@@ -446,6 +534,9 @@ p {
             .left-right-buttons {
               display: flex;
               gap: 16px;
+              @media screen and (max-width: 1120px) {
+                display: none;
+              }
 
               svg {
                 transition: 0.6s all;
@@ -460,6 +551,9 @@ p {
               display: flex;
               align-items: center;
               margin-bottom: 20px;
+              @media screen and (max-width: 1120px) {
+                width: 100%;
+              }
 
               .scrollbar-track {
                 background: $scrollbar-track-color;
@@ -535,7 +629,6 @@ p {
       background-color: white;
       width: 100%;
       height: 100%;
-      padding-bottom: 30px;
 
       .inside-container {
         position: relative;
@@ -548,18 +641,39 @@ p {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media screen and (max-width: 1120px) {
+          flex-direction: column;
+          align-items: start;
+          max-width: 85%;
+          width: 85%;
+        }
 
         div {
           display: flex;
           flex-direction: column;
           gap: 24px;
+          width: 100%;
+          h4 {
+            order: 1;
+          }
 
           p {
+            order: 3;
             width: 610px;
+            @media screen and (max-width: 1120px) {
+              width: 40vw;
+            }
+            @media screen and (max-width: 770px) {
+              font-size: 14px;
+              width: 100%;
+            }
           }
 
           .links {
             display: flex;
+            @media screen and (max-width: 770px) {
+              display: none;
+            }
             flex-direction: row;
 
             a {
@@ -571,14 +685,44 @@ p {
             }
 
             img {
+
               width: 68px;
               height: 16px;
             }
           }
         }
 
+        .mobile-download {
+          display: none;
+          order: 4;
+          text-decoration: none;
+          text-align: center;
+          box-sizing: border-box;
+          padding: 16px 32px;
+          @include font(12px);
+          color: $not-active-blue;
+          width: 100%;
+          border: 1px solid $gray2;
+          &:hover{
+          border: 1px solid $not-active-blue;
+          }font-weight: 700;
+          background-color: $gray3;
+          svg {
+            transform: translate(0, 12.5%);
+          }
+
+          @media screen and (max-width: 770px) {
+            display: block;
+          }
+        }
+
         .links-main-image {
+          order: 2;
           position: absolute;
+          @media screen and (max-width: 770px) {
+            position: static;
+            width: fit-content;
+          }
           object-fit: contain;
           height: 373px;
           right: 0;
@@ -587,11 +731,17 @@ p {
       }
     }
   }
-
-  @include footer;
+.box2 {
+  width: 130px;
+  @media screen and (max-width: 1120px) {
+    width: 100% !important;
+  }
 }
+  @include footer;
+
 
 
 @include scroll;
+
 //
 
