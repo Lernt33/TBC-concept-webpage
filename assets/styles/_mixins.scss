@@ -201,6 +201,9 @@
 }
 
 @mixin footer {
+  .gray-bg{
+    background-color: $gray3;
+  }
   footer {
     height: max-content;
 
@@ -335,7 +338,10 @@
         @media screen and (max-width: 1120px){
           width: 85%;
         }
-        padding: 28px 0;
+        p{
+          color: #6f787b !important;
+        }
+        padding: 36px 0;
         display: flex;
         justify-content: space-between;
         @media screen and (max-width: 770px) {
@@ -353,6 +359,10 @@
             fill: $gray;
             width: 21px;
             height: 21px;
+            @media screen and (max-width: 770px) {
+              margin-right: 8px;
+              fill: #6f787b;
+            }
           }
 
           p {

@@ -39,6 +39,7 @@ p {
 @include nav;
 //main
 .scroll-content {
+  position: absolute;
   main {
     .whole-width {
       background-color: $gray3;
