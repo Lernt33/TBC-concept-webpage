@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     allUNFocusableElements.forEach(element => {
         element.setAttribute('tabindex', '-1');
     });
-    const allFocusableElements = document.querySelectorAll('h4','h1','img','h2');
+    const allFocusableElements = document.querySelectorAll('h4, h1, img, h2');
     allFocusableElements.forEach(element => {
         element.setAttribute('tabindex', '1');
     });
