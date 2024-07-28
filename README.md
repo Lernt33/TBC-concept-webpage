@@ -5,7 +5,7 @@ Technologies used -
 <li>JAVASCRIPT(pure)</li>
 </ol>
 </br>
-Original site - <a href="https://tbcconcept.ge/ge">here</a>
+<h1>Original site - <a href="https://tbcconcept.ge/ge">here</a></h1>
 </br>
 Responsive up to 280px;
 </br>
