@@ -5,6 +5,7 @@
     html {
       scroll-behavior: smooth;
     }
+
     margin: 0 0;
     padding: 0 0;
     font-family: 'TBC';
@@ -226,13 +227,28 @@
       .footer-top {
         padding: 45px 0 50px;
         width: 100%;
-        @media screen and (max-width: 1120px) {
-          width: 85%;
-        }
 
+        .tbc-secondary-logo {
+          display: none;
+        }
         svg {
           transform: translate(0, 15%) !important;
         }
+        @media screen and (max-width: 1120px) {
+          width: 85%;
+
+        }
+        @media screen and (max-width: 770px) {
+          .tbc-main-logo {
+            display: none;
+          }
+          .tbc-secondary-logo {
+            display: block;
+              transform: translate(0, 0) !important;
+          }
+        }
+
+
 
         display: flex;
         justify-content: space-between;
@@ -443,15 +459,15 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      @media screen  and (max-width: 770px){
-          width: 100vw;
+      @media screen and (max-width: 770px) {
+        width: 100vw;
       }
 
       .form-header {
         border-bottom: 1px solid #eef1f1;
         padding: 32px 56px;
-        @media screen  and (max-width: 470px){
-            padding: 24px 15px;
+        @media screen and (max-width: 470px) {
+          padding: 24px 15px;
         }
         display: flex;
         align-items: center;
@@ -460,7 +476,7 @@
 
         h2 {
           @include font(24px);
-          @media screen  and (max-width: 470px){
+          @media screen and (max-width: 470px) {
             font-size: 14px;
           }
         }
@@ -478,9 +494,9 @@
 
       .main-form {
         padding: 48px 56px;
-        @media screen  and (max-width: 470px){
+        @media screen and (max-width: 470px) {
           padding: 32px 15px;
-          iframe{
+          iframe {
             width: 80vw;
             height: auto;
           }
@@ -490,9 +506,11 @@
         gap: 16px;
         flex-grow: 1;
         overflow-y: auto;
-        &::-webkit-scrollbar{
+
+        &::-webkit-scrollbar {
           width: 0;
         }
+
         .input-wrap {
           width: 100%;
           position: relative;
@@ -503,7 +521,7 @@
           color: $gray;
           font-weight: normal;
           margin-bottom: 14px;
-          @media screen  and (max-width: 470px){
+          @media screen and (max-width: 470px) {
             font-size: 14px;
           }
         }
@@ -517,9 +535,11 @@
           height: 56px;
           transition: 0.4s all;
         }
-        textarea{
+
+        textarea {
           resize: vertical;
         }
+
         input, textarea {
           width: 100%;
           border-radius: 4px;
@@ -573,6 +593,7 @@
           justify-content: start;
           align-items: center;
           margin: 14px 0px;
+
           #checkbox {
             width: 18px;
             height: 18px;
@@ -601,7 +622,7 @@
       .form-footer {
         width: 100%;
         padding: 32px 56px;
-        @media screen  and (max-width: 470px){
+        @media screen and (max-width: 470px) {
           padding: 32px 15px;
         }
         z-index: 1000;
@@ -621,6 +642,7 @@
           color: white;
           transition: 0.4s all;
           cursor: pointer;
+
           svg {
             transform: translate(0, 25%);
           }

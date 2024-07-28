@@ -133,3 +133,15 @@ inputs.forEach(input => {
         }
     })
 })
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const allUNFocusableElements = document.querySelectorAll('a, [tabindex]');
+    allUNFocusableElements.forEach(element => {
+        element.setAttribute('tabindex', '-1');
+    });
+    const allFocusableElements = document.querySelectorAll('h4','h1','img','h2');
+    allFocusableElements.forEach(element => {
+        element.setAttribute('tabindex', '1');
+    });
+});

@@ -1627,13 +1627,25 @@ footer .page-size .footer-top {
   justify-content: space-between;
   align-content: center;
 }
+footer .page-size .footer-top .tbc-secondary-logo {
+  display: none;
+}
+footer .page-size .footer-top svg {
+  transform: translate(0, 15%) !important;
+}
 @media screen and (max-width: 1120px) {
   footer .page-size .footer-top {
     width: 85%;
   }
 }
-footer .page-size .footer-top svg {
-  transform: translate(0, 15%) !important;
+@media screen and (max-width: 770px) {
+  footer .page-size .footer-top .tbc-main-logo {
+    display: none;
+  }
+  footer .page-size .footer-top .tbc-secondary-logo {
+    display: block;
+    transform: translate(0, 0) !important;
+  }
 }
 footer .page-size .footer-top .dropbtn {
   font-weight: bold;
