@@ -378,7 +378,9 @@
         div {
           display: flex;
           gap: 24px;
-
+          @media screen and (max-width: 450px) {
+            flex-direction: column;
+          }
           svg {
             fill: $gray;
             width: 21px;

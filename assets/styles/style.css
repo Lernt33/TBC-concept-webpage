@@ -244,6 +244,11 @@ a:hover {
     gap: 36px;
   }
 }
+@media screen and (max-width: 1120px) and (max-width: 450px) {
+  .nav-rest-mobile .nav-footer-mobile .nav-footer-mobile-contents .nav-footer-right, .mobile-footer .nav-footer-mobile .nav-footer-mobile-contents .nav-footer-right {
+    flex-direction: column;
+  }
+}
 
 .nav-rest-mobile {
   position: relative;
@@ -1816,6 +1821,11 @@ footer .page-size .footer_bottom p {
 footer .page-size .footer_bottom div {
   display: flex;
   gap: 24px;
+}
+@media screen and (max-width: 450px) {
+  footer .page-size .footer_bottom div {
+    flex-direction: column;
+  }
 }
 footer .page-size .footer_bottom div svg {
   fill: #555F62;
