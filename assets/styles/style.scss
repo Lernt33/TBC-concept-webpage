@@ -5,6 +5,82 @@
 * {
 }
 
+.additional-information-wrap {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  flex-direction: column-reverse;
+  gap: 12px;
+  @media screen and (max-width: 1440px) {
+    bottom: 32px;
+    right: 32px;
+  }
+  @media screen  and (max-width: 1120px){
+    bottom: 24px;
+    right: 24px;
+  }
+  @media screen  and (max-width: 470px){
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .additional-information {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    @media screen  and (max-width: 470px){
+      width: 48px;
+      height: 48px;
+    }
+
+    background-color: #424a4d;
+    border-radius: 50%;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    svg {
+      position: absolute;
+      fill: white;
+    }
+  }
+
+  .component {
+    display: none;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    @media screen  and (max-width: 470px){
+      width: 48px;
+      height: 48px;
+    }
+    cursor: pointer;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eef1f1;
+    background-color: white;
+    transition: 0.4s all;
+    &:hover {
+      background-color: $active;
+
+      svg {
+        fill: white;
+      }
+    }
+
+    svg {
+      transition: 0.4s all;
+      width: 28px;
+      height: 28px;
+      fill: $gray;
+    }
+  }
+}
+
 @include Init;
 
 .blue-hover {
@@ -14,6 +90,10 @@
 
   &:hover {
     color: $active !important;
+  }
+  @media screen and (max-width: 470px) {
+    font-size: 14px !important;
+    width: min-content;
   }
 }
 
@@ -40,6 +120,7 @@ p {
 //main
 .scroll-content {
   position: absolute;
+
   main {
     .whole-width {
       background-color: $gray3;
@@ -208,6 +289,9 @@ p {
         @media screen and (max-width: 770px) {
           font-size: 24px;
         }
+        @media screen and (max-width: 470px) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -215,6 +299,9 @@ p {
       margin: 120px 0 36px;
       @media screen and (max-width: 1120px) {
         margin: 100px 0 36px;
+      }
+      @media screen and (max-width: 770px) {
+        font-size: 14px;
       }
     }
 
@@ -280,6 +367,9 @@ p {
             font-weight: bold;
             margin: 0;
             margin-bottom: 8px;
+            @media screen  and (max-width: 770px){
+              font-size: 16px;
+            }
           }
         }
       }
@@ -649,6 +739,7 @@ p {
       align-items: start;
       max-width: 85%;
       width: 85%;
+
     }
 
     div {
@@ -656,9 +747,12 @@ p {
       flex-direction: column;
       gap: 24px;
       width: 100%;
-
+      align-items: flex-start;
       h4 {
         order: 1;
+        @media screen  and (max-width: 770px){
+          margin: 0;
+        }
       }
 
       p {
@@ -676,7 +770,7 @@ p {
       .links {
         order: 4;
         display: flex;
-        @media screen and (max-width: 770px) {
+        @media screen and (max-width: 1120px) {
           display: none;
         }
         flex-direction: row;
@@ -706,7 +800,9 @@ p {
       padding: 16px 32px;
       @include font(12px);
       color: $not-active-blue;
-      width: 100%;
+      @media screen  and (max-width: 770px){
+        width: 100%;
+      }
       border: 1px solid $gray2;
 
       &:hover {
@@ -720,7 +816,7 @@ p {
         transform: translate(0, 12.5%);
       }
 
-      @media screen and (max-width: 770px) {
+      @media screen and (max-width: 1120px) {
         display: block;
       }
     }
@@ -730,7 +826,12 @@ p {
       position: absolute;
       @media screen and (max-width: 770px) {
         position: static;
-        width: fit-content;
+        width: 370px;
+        height: auto;
+      }
+      @media screen and (max-width: 440px) {
+        width: 80vw;
+        height: auto;
       }
       object-fit: contain;
       height: 373px;
@@ -747,11 +848,11 @@ p {
     width: 100% !important;
   }
 }
-
+.margintop0{
+  margin-top: 0px !important;
+}
 @include footer;
-
-
 @include scroll;
-
+@include form;
 //
 
