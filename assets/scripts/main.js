@@ -124,9 +124,7 @@ inputs.forEach(input => {
         for (const [key, value] of Object.entries(valid)) {
             temp.push(value)
         }
-        console.log(temp)
-        console.log(temp.every((el)=>el===true))
-        if (temp.every((el)=>el===true)){
+        if (temp.every((el)=>el===true) && document.getElementById("checkbox").checked){
             button.disabled=false
         }
         else{
