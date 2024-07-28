@@ -109,7 +109,7 @@ inputs.forEach(input => {
 })
 
 const text_area = document.querySelector('textarea')
-text_area.addEventListener('keydowng', () => {
+text_area.addEventListener('keydown', () => {
     text_area.parentElement.querySelector('.counter').textContent = `${text_area.value.length}/100`
     if (text_area.value.length > 100) {
         text_area.parentElement.querySelector('.counter').style.color = 'red'
