@@ -691,12 +691,12 @@ p {
         display: block;
         text-align: right;
         font-size: 1rem;
-        color: $link-color;
+        color: $not-active-blue;
         text-decoration: none;
 
         &:hover {
           text-decoration: underline;
-          color: $link-hover-color;
+          color: $not-active-blue;
         }
       }
     }
