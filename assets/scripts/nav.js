@@ -42,7 +42,7 @@ document.querySelector('.burger').addEventListener('click', function () {
     if (navRestMobile.classList.length < 3) {
         setTimeout(() => {
             navRestMobile.style.display = 'none'
-        }, 600)
+        }, 200)
 
     } else {
         setTimeout(() => {
