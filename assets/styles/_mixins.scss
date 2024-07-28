@@ -537,13 +537,13 @@
 
           &:focus {
             outline: 0;
-            border-color: #00adee;
+            border-color: #00adee !important;
           }
 
-          &:focus ~ label {
-            font-size: 12px;
-            top: 4px;
-          }
+          //&:focus ~ label {
+          //  font-size: 12px;
+          //  top: 4px;
+          //}
         }
 
         label {
@@ -608,13 +608,16 @@
 
         button {
           border: none;
-          color: #a5aaac;
           width: 100%;
           border-radius: 4px;
           box-sizing: border-box;
           padding: 16px 24px;
           font-weight: bold;
           font-size: 12px;
+          background-color: #3295ce;
+          color: white;
+          transition: 0.4s all;
+          cursor: pointer;
           svg {
             transform: translate(0, 25%);
           }

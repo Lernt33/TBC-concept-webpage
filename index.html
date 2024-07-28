@@ -835,26 +835,26 @@
         <div class="main-form">
             <h3>დაგვიკავშირდით</h3>
             <div class="input-wrap">
-                <input required id="name" name="name" type="text">
+                <input class="required-input" maxlength="256" required id="name" name="name" type="text">
                 <label for="name">სახელი და გვარი <span class="red">*</span></label>
                 <p class="required" style="display: none">აუცილებელი ველი</p>
             </div>
             <div class="input-wrap">
-                <input required id="number" type="tel">
+                <input class="required-input" maxlength="256" required id="number" type="number">
                 <label for="number">ნომერი <span class="red">*</span></label>
                 <p class="required" style="display: none">აუცილებელი ველი</p>
             </div>
             <div class="input-wrap">
-                <input required id="email" name="name" type="email">
+                <input class="required-input" maxlength="256" required id="email" name="name" type="email">
                 <label for="email">ელ.ფოსტა <span class="red">*</span></label>
                 <p class="required" style="display: none">აუცილებელი ველი</p>
             </div>
             <div class="input-wrap">
-                <input id="company" name="company" type="text">
+                <input  maxlength="256" id="company" name="company" type="text">
                 <label for="company">კომპანია</label>
             </div>
             <div class="input-wrap">
-                <textarea minlength="0" rows="4" cols="50" maxlength="100" id="text" name="text"></textarea>
+                <textarea class="required-input" minlength="0" rows="4" cols="50" maxlength="120" id="text" name="text"></textarea>
                 <label for="text">ტექსტი <span class="red">*</span></label>
                 <span class="counter">0/100</span>
                 <p class="required" style="display: none">აუცილებელი ველი</p>
@@ -867,7 +867,7 @@
         </div>
         <div class="form-footer">
             <div class="confirm">
-                <button type="submit" disabled>
+                <button id="submitbutton" type="submit" disabled>
                     <svg data-v-e6dc0f1c="" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
                         <path data-v-e6dc0f1c=""
