@@ -304,7 +304,7 @@ a:hover {
     opacity: 0.5;
   }
   75% {
-    opacity: 0.25;
+    opacity: 0.75;
   }
   100% {
     opacity: 0;
