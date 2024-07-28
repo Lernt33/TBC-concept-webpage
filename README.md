@@ -6,5 +6,5 @@ Responsive up to 280px
 Form validation
 Pure javascript
 
-To run the page, just copy the repository
-<strong>git clone https://github.com/Lernt33/TBC-concept-webpage.git</strong>
+To run the page, just copy the repository</br>
+<strong style="color: white; text-decoration: none;">git clone https://github.com/Lernt33/TBC-concept-webpage.git</strong>
