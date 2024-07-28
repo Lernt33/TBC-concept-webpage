@@ -47,7 +47,7 @@ document.querySelector('.burger').addEventListener('click', function () {
     } else {
         setTimeout(() => {
             navRestMobile.style.display = 'block'
-        }, 600)
+        }, 500)
     }
     navRestMobile.classList.toggle('hidden-element');
 
