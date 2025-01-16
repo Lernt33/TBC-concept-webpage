@@ -14,6 +14,4 @@ Form validation;
 </br>
 Pure javascript;
 </br>
-To run the page, just copy the repository</br>
-<strong style="color: white; text-decoration: none;">git clone https://github.com/Lernt33/TBC-concept-webpage.git</strong>
-And open index.html in any browser.
+
